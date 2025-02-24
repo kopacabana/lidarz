@@ -25,6 +25,7 @@ State = Enum("State", ["SYNC0", "SYNC1", "SYNC2", "LOCKED", "UPDATE_PLOT", "WS_S
 
 ROOT = os.path.dirname(__file__)
 WEB = os.path.join(ROOT, "web")
+# WEB = os.path.join(ROOT, "lidarz_web")
 
 lidars = []
 

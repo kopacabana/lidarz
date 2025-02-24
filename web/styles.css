@@ -1,0 +1,333 @@
+@font-face {
+    font-family: 'Castellar';
+    src:
+        url('./assets/fonts/CastellarMTStd.woff2') format('woff2'), /* Super Modern Browsers */
+        url('./assets/fonts/CastellarMTStd.woff') format('woff'), /* Pretty Modern Browsers */
+        url('./assets/fonts/CastellarMTStd.ttf')  format('truetype'), /* Safari, Android, iOS */ 
+        url('./assets/fonts/CastellarMTStd.otf') format('opentype'); /* Change to match your local font location */
+}
+@font-face {
+    font-family: 'Goudy';
+    font-style: normal;
+    font-weight: 500;
+    src: url('./assets/fonts/GoudySansStd-Bold.otf') format('opentype'); /* Change to match your local font location */
+}
+
+
+
+/* ************************************************************************************** */
+/* ************************************************************************************** */
+/* ************************************************************************************** */
+html, body {
+    margin:0;
+    padding:0;
+    border:0;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    width:1920px;
+    height:1200px;
+    overflow: hidden;
+
+    /* Couleur arrière plan. Noir en prod */
+    background-color: #d65039;
+    /* background-color: #524340; */
+    /* background-color: black; */
+    
+    /* Mise à l'échelle phase de debug. Si mise à l'échelle, le mix-blend-mode ne fonctionne plus */
+    /* transform: scale(0.8);
+    transform-origin: 50% 0; */
+}
+
+.canvas-pixi {
+    position: absolute;
+    z-index: 0;
+}
+
+
+
+/* ************************************************************************************** */
+/* ************************************************************************************** */
+/* ************************************************************************************** */
+/* TITLE */
+.ctr-title-anim {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #000;
+    border: solid 5.5px white;
+    box-shadow: 5px 20px 20px 0px rgba(0, 0, 0, 0.74);
+
+    position: absolute;
+    z-index: 300;
+
+    /* visibility: hidden; */
+}
+.ctr-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    position: relative;
+    padding: 0;
+    background-color: #000;
+
+    overflow: hidden;
+    height:38px;
+}
+.ctr-title.two {
+    height:64px;
+}
+p.title {
+    font-family: Castellar;
+    font-size: 22px;
+    color:rgb(255, 255, 255);
+    margin: 0;
+    padding: 8px 0;
+    position: absolute;
+
+    /* Antialiasing */
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+}
+
+.arrow {
+    width:32px;
+    position: absolute;
+    left:-32px;
+    top:-7px;
+    transform: scaleX(0.85) scaleY(0.85);
+}
+.arrow.right {
+    transform: scaleX(-0.85) scaleY(0.85);
+    left:auto;
+    right:-32px;
+}
+.arrow.two {
+    top:6px;
+}
+
+
+/* LEGEND */
+.ctr-legend-anim {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid 4px #ccc;
+
+    position: absolute;
+    z-index: 100;
+    overflow: hidden;
+
+    background-color: #000;
+    box-shadow: 5px 20px 20px 0px rgba(0, 0, 0, 0.74);
+
+    /* Antialiasing */
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+
+}
+.ctr-legend {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: rgb(255, 255, 255);
+    position: relative;
+    padding: 16px 15px 6px;
+    margin: 0 14px;
+
+    border-left: solid 24px #ccc;
+    border-right: solid 24px #ccc;
+}
+p.legend {
+    font-family: Goudy;
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    -webkit-user-select:none;
+    user-select: none;
+    margin: 0;
+}
+
+
+/* LOG */
+p.log {
+    font-family: "Poppins", sans-serif;
+
+    width:800px; 
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    /* background-color: rgba(0, 0, 0, 0.4); */
+    padding: 8px;
+    position: absolute;
+    z-index: 100;
+    left : 20px;
+    top:20px;
+    display: none;
+}
+
+
+
+/* ************************************************************************************** */
+/* ************************************************************************************** */
+/* ************************************************************************************** */
+img {
+    transform: translateZ(0);
+}
+
+/* ************************************************************************************** */
+#wrapper-imgs {
+    mix-blend-mode: screen;
+
+    width: 1920px;
+    height: 1200px;
+    position: absolute;
+    overflow: hidden;
+}
+#wrapper-imgs img {
+    position: absolute;
+}
+/* ************************************************************************************** */
+#bg-mountains-1, #bg-mountains-2 {
+    /* width:1680px;  */
+    opacity: 0.45; 
+    top:180px;
+}
+#bg-mountains-1 {
+    left:-1920px;
+}
+#bg-mountains-2 {
+    left:0px;
+}
+/* ************************************************************************************** */
+#m-village, #o-village {
+    top:310px;
+    /* width:800px;  */
+}
+#o-village {
+    opacity: 0.6; 
+}
+/* ************************************************************************************** */
+#m-cotes-2, #o-cotes-2 {
+    top:480px;
+    /* left:-1200px; */
+    left:640px;
+    width:1200px; 
+}
+#o-cotes-2 {
+    opacity: 0.6; 
+}
+/* ************************************************************************************** */
+#m-port, #o-port {
+    top:464px;
+    /* left:-1600px; */
+    left:-80px;
+    width:950px; 
+}
+#o-port {
+    opacity: 0.68; 
+}
+/* ************************************************************************************** */
+#m-cotes-3, #o-cotes-3 {
+    top:630px;
+    left:600px;
+    width:1600px; 
+}
+#o-cotes-3 {
+    opacity: 0.64; 
+}
+/* ************************************************************************************** */
+#smoke-T1, #smoke-T2 {
+    top:50px;
+    mix-blend-mode: screen;
+    opacity: 0.2;
+}
+#smoke-B1, #smoke-B2 {
+    top:626px;
+    mix-blend-mode: screen;
+    opacity: 0.2;
+}
+#smoke-T2 {
+    left:-1920px
+}
+#smoke-B2 {
+    left:1920px
+}
+/* ************************************************************************************** */
+#rocher-1, #rocher-2 {
+    z-index:500;
+}
+#m-rocher-1, #o-rocher-1 {
+    top:860px;
+    width:550px; 
+    opacity:0.7;
+    z-index:500;
+}
+#m-rocher-2, #o-rocher-2 {
+    top:940px;
+    left:900px;
+    width:900px; 
+    z-index:501;
+}
+
+#wrapper-txts {
+    z-index: 0;
+}
+#wrapper-txts img {
+    z-index:0;
+}
+
+#ctrBg {
+    width:1980px;
+    height: 1200px;
+}
+
+
+/* ************************************************************************************** */
+/* ************************************************************************************** */
+/* ************************************************************************************** */
+.img-visu {
+    filter: drop-shadow(5px 5px 5px #222);
+    width:500px;
+    z-index: 200;
+}
+#v1 {
+    width:400px;
+    top:200px;
+    left:600px;
+}
+
+
+
+/* ************************************************************************************** */
+/* ************************************************************************************** */
+/* ************************************************************************************** */
+/* A virer en prod */
+#wrapper-colors {
+    position: absolute;
+    display: flex;
+    width:180px;
+    bottom:20px;
+    left:20px;
+    z-index: 1000;
+}
+.colorPick {
+    width:20px;
+    height:20px;
+    border: solid 2px white;
+    margin-right: 5px;
+    border-radius: 6px;
+    text-align: center;
+    color:white
+}
+#clr-base {
+    background-color: #d65039;
+}
+#clr-brown {
+    background-color: #524340;
+}
+#clr-black {
+    background-color: #000;
+}

@@ -2,10 +2,91 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>OKDO LD06</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D2</title>
+
+    <link rel="stylesheet" href="./styles.css" />
+
+    <script src="./libs/jquery-3.7.1.min.js"></script>
+    <script src="./libs/pixi.min.js"></script>
+    <script src="./libs/gsap.min.js"></script>
 </head>
 <body>
-    <h2>OKDO LD06</h2>
-    <div><a href="webrtc.html">WebRTC</a> <a href="websocket.html">WebSocket</a></div>
+    <!-- Application -->
+    <!-- <div> -->
+        <div id="wrapper-imgs">
+            <div id="mountains" >
+                <img id="bg-mountains-1" src="./assets/illus/o_montagnes.png"/>
+                <img id="bg-mountains-2" src="./assets/illus/o_montagnes.png"/>
+            </div>
+            <div id="village" class="imgMask">
+                <img id="m-village" class="mask" src="./assets/illus/m_village.png"/>
+                <img id="o-village" src="./assets/illus/o_village.png"/>
+            </div>
+            <div id="cotes-2" class="imgMask">
+                <img id="m-cotes-2" class="mask" src="./assets/illus/m_cotes-2.png"/>
+                <img id="o-cotes-2" src="./assets/illus/o_cotes-2.png"/>
+            </div>
+            <div id="port" class="imgMask">
+                <img id="m-port" class="mask" src="./assets/illus/m_port.png"/>
+                <img id="o-port" src="./assets/illus/o_port.png"/>
+            </div>
+            <div id="cotes-3" class="imgMask">
+                <img id="m-cotes-3" class="mask" src="./assets/illus/m_cotes-3.png"/>
+                <img id="o-cotes-3" src="./assets/illus/o_cotes-3.png"/>
+            </div>
+            <div id="smoke-top" class="imgMask">
+                <img id="smoke-T1" src="./assets/illus/smoke_seam_top_1920.png"/>
+                <!-- <img id="smoke-3" src="./assets/illus/smoke_seam_1920.png"/> -->
+                <img id="smoke-T2" src="./assets/illus/smoke_seam_top_1920.png"/>
+            </div>   
+            <div id="smoke-bottom" class="imgMask">
+                <img id="smoke-B1" src="./assets/illus/smoke_seam_bottom_1920.png"/>
+                <!-- <img id="smoke-3" src="./assets/illus/smoke_seam_1920.png"/> -->
+                <img id="smoke-B2" src="./assets/illus/smoke_seam_bottom_1920.png"/>
+            </div>        
+    
+            
+    
+            <img id="v1" class="img-visu" src="./assets/visuels/MM2-guerre-civile-250130.png" />
+            <img id="v2" class="img-visu" src="./assets/visuels/MM2-guerre-civile-2501302.png" />
+            <img id="v3" class="img-visu" src="./assets/visuels/MM2-guerre-civile-2501303.png" />
+            <img id="v4" class="img-visu" src="./assets/visuels/MM2-guerre-civile-2501304.png" />
+            <img id="v5" class="img-visu" src="./assets/visuels/MM2-guerre-civile-2501305.png" />
+            <img id="v6" class="img-visu" src="./assets/visuels/MM2-guerre-civile-2501306.png" />
+            <img id="v7" class="img-visu" src="./assets/visuels/MM2-guerre-civile-2501307.png" />
+            <img id="v8" class="img-visu" src="./assets/visuels/MM2-guerre-civile-2501308.png" />
+    
+    
+            <div id="wrapper-txts">
+    
+            </div>
+    
+            <div id="rocher-1" class="imgMask">
+                <img id="m-rocher-1" class="mask" src="./assets/illus/m_rocher-1.png"/>
+                <img id="o-rocher-1" src="./assets/illus/o_rocher-1.png"/>
+            </div>
+            <div id="rocher-2" class="imgMask">
+                <img id="m-rocher-2" class="mask" src="./assets/illus/m_rocher-2.png"/>
+                <img id="o-rocher-2" src="./assets/illus/o_rocher-2.png"/>
+            </div>
+    
+            <img id="ctrBg" src="./assets/ctrBg.png" />
+        </div>
+    
+        <div id="limit"></div>
+        
+        <div id="wrapper-colors">
+            <div id="clr-base" class="colorPick" data-clr="#d65039"></div>
+            <div id="clr-brown" class="colorPick" data-clr="#524340"></div>
+            <div id="clr-black" class="colorPick" data-clr="#000"></div>
+            <div id="displayDebugLIDAR" class="colorPick" data-clr="#fff">D</div>
+        </div>
+    <!-- </div> -->
+
+    <!-- Debug affichage Données LIDARs -->
+    <div id="app"></div>
+
+    <script src="index.js" type="module"></script>
 </body>
 </html>
